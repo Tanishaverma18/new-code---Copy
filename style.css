@@ -1129,9 +1129,6 @@ section {
   border-radius: 15px;
 }
 
-/* ===== Responsive Design ===== */
-
-/* Tablets */
 @media (max-width: 1024px) {
   .global-section {
     padding: 40px 40px;
@@ -1192,4 +1189,315 @@ section {
     width: 100%;
     max-width: 500px;
   }
+}
+
+.faq-container {
+    width: 100%;
+    background-color: #000;
+    padding: 2rem clamp(1.5rem, 5vw, 3rem);
+    border: 1px solid #2D2D2D;
+}
+
+/* --- Header Section --- */
+.faq-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.faq-header h1 {
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #EAEAEA;
+}
+
+.faq-header h1 .highlight {
+    color: #00AFFF;
+}
+
+.faq-header .image-placeholder {
+    width: 100%;
+    max-width: 250px;
+    height: 150px;
+    margin: 0 auto;
+    background-color: #1E1E1E;
+    border: 2px dashed #2D2D2D;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #B3B3B3;
+    font-size: 0.9rem;
+    /* Remove the line below and replace with your <img> tag */
+    margin-bottom: 2rem; 
+}
+
+/* --- FAQ List --- */
+.faq-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+}
+
+.faq-item {
+    background-color: #1E1E1E;
+    border-radius: 16px;
+    border: 1px solid #2D2D2D;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-item:hover {
+    background-color: #252525;
+}
+
+.faq-question {
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+    padding-left: 2rem;
+    color: #EAEAEA;
+    margin: 0;
+}
+
+/* Creates the circular bullet point */
+.faq-question::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #EAEAEA;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.faq-item:hover .faq-question::before {
+    background-color: #00AFFF;
+}
+
+/* --- Answer Styling & Hover Logic --- */
+.faq-answer {
+    color: #B3B3B3;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.4s ease-out, padding-top 0.5s ease-out;
+    padding-left: 2rem; /* Aligns with question text */
+}
+
+.faq-answer p {
+    margin: 0;
+}
+
+.faq-item:hover .faq-answer {
+    padding-top: 1rem; /* Space between question and answer */
+    max-height: 250px; /* Adjust if your answers are longer */
+    opacity: 1;
+}
+
+/* --- Contact Form --- */
+.contact-form {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.contact-form input {
+    flex-grow: 1;
+    background-color: #1E1E1E;
+    border: 1px solid #2D2D2D;
+    border-radius: 12px;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    color: #EAEAEA;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-form input::placeholder {
+    color: #B3B3B3;
+}
+
+.contact-form button {
+    background: linear-gradient(45deg, #00AFFF, #007BFF);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 175, 255, 0.3);
+}
+
+@media (max-width: 600px) {
+    .faq-container {
+        padding: 1.5rem;
+    }
+    .faq-container {
+        padding: 1.5rem;
+    } 
+    .contact-form {
+        flex-direction: column;
+    }
+}
+.creative-journey {
+    /* Added styles from body for component to be centered and have a dark background */
+    font-family: 'Poppins', sans-serif;
+    background-color: #0A0A0A;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden; /* Hides gradient overflow */
+    text-align: center;
+    width: 100%;
+    margin: auto; /* Center the component */
+    z-index: 1;
+}
+
+/* -------------------
+  * Faint Background Circles
+  * ------------------- */
+.creative-journey::before,
+.creative-journey::after {
+    content: '';
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(40, 40, 40, 0.3) 0%, transparent 65%);
+    z-index: -1; /* Place behind the content */
+    transform: translate(-50%, -50%);
+}
+
+.creative-journey::before {
+    top: 50%;
+    left: 20%;
+}
+
+.creative-journey::after {
+    top: 50%;
+    left: 80%;
+}
+
+.journey-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 6rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* -------------------
+  * Steps Container (Flexbox)
+  * ------------------- */
+.steps-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap; /* Allows cards to stack on smaller screens */
+}
+
+/* -------------------
+  * Individual Step Card
+  * ------------------- */
+.step-card {
+    background-color: #212121;
+    border-radius: 16px;
+    padding: 2rem 1.5rem 1.5rem;
+    width: 260px;
+    position: relative;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 35px rgba(51, 193, 255, 0.1);
+}
+
+/* -------------------
+  * Number Circle on Top
+  * ------------------- */
+.step-number {
+    width: 54px;
+    height: 54px;
+    background: linear-gradient(145deg, #404040, #1e1e1e);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #f0f0f0;
+    position: absolute;
+    top: -27px; /* Half of height to sit on the edge */
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border: 2px solid #333;
+}
+
+/* -------------------
+  * Card Content
+  * ------------------- */
+.step-title {
+    color: #33C1FF; /* Highlight blue color */
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.step-description {
+    font-size: 0.95rem;
+    color: #c0c0c0; /* Light gray for description text */
+    line-height: 1.6;
+}
+
+/* -------------------
+  * Responsive Design
+  * ------------------- */
+@media (max-width: 920px) {
+    .steps-container {
+        gap: 5rem; /* Increase gap for stacked layout */
+    }
+    .step-card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 600px) {
+    .creative-journey {
+        padding: 1.5rem;
+    }
+    .journey-title {
+        font-size: 1.8rem;
+        margin-bottom: 5rem;
+    }
+    .step-card {
+        width: 100%;
+        max-width: 320px;
+    }
 }
