@@ -915,4 +915,8 @@ section {
     font-size: 1.8rem;
     max-width: 100%;
   }
+  .hero-form {
+    padding:30px;
+  }
+
 }
